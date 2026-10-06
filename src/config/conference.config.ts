@@ -1,0 +1,315 @@
+import { Speaker, Track, ScheduleDay, TicketTier, FaqItem } from '@/types/conference';
+
+export const CONFERENCE_INFO = {
+  name: 'AETHEL 2026',
+  fullTitle: 'AETHEL // Global Intelligence & Systems Summit',
+  theme: 'The Architecture of Autonomous Thought',
+  dates: 'November 12–14, 2026',
+  location: 'San Francisco, California',
+  venue: 'The Palace of Fine Arts & Symphony Innovation Hall',
+  tagline: 'An invitation-only convening of leading systems architects, AI scientists, and technical founders.',
+  stats: [
+    { label: 'Attending Fellows', value: '1,200+' },
+    { label: 'Technical Sessions', value: '48' },
+    { label: 'Keynote Researchers', value: '32' },
+    { label: 'Nations Represented', value: '40+' },
+  ],
+  manifesto: {
+    heading: 'A forum engineered for substance, not spectacle.',
+    subheading: 'Moving past superficial demonstrations to examine the foundational primitives of computing, neural synthesis, and resilient distributed state.',
+    paragraphs: [
+      'Computing is undergoing its most radical transformation since the advent of the transistor. As foundation models transition from exploratory experiments into autonomous runtime fabrics, the boundaries separating compilers, networks, and neural weights are dissolving.',
+      'AETHEL convenes the engineers and researchers designing this substrate. We do not host marketing showcases or vendor pitches. Every talk is peer-reviewed for technical rigor, code reproducibility, and enduring architectural insight.',
+    ],
+  },
+};
+
+export const SPEAKERS: Speaker[] = [
+  {
+    id: '1',
+    name: 'Dr. Aris Thorne',
+    title: 'Head of Distributed Compute',
+    organization: 'Helios Neuromorphic Labs',
+    bio: 'Pioneered sub-millisecond tensor parallelism algorithms across heterogeneous clusters exceeding 100,000 accelerators.',
+    tag: 'Distributed Systems',
+    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80',
+    featured: true,
+  },
+  {
+    id: '2',
+    name: 'Mira Chen-Svensson',
+    title: 'VP of Foundation Architectures',
+    organization: 'Synthetica AI',
+    bio: 'Lead architect of multi-modal reasoning engines utilized in autonomous robotics and spatial computing pipelines.',
+    tag: 'Foundation Models',
+    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80',
+    featured: true,
+  },
+  {
+    id: '3',
+    name: 'Marcus Vance, PhD',
+    title: 'Chief Cryptographer & Architect',
+    organization: 'Aether Consensus',
+    bio: 'Author of verified state proofs for zero-knowledge verifiable execution environments and high-throughput transaction rails.',
+    tag: 'Formal Verification',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80',
+    featured: true,
+  },
+  {
+    id: '4',
+    name: 'Prof. Kaede Tanaka',
+    title: 'Director of Silicon Photonics',
+    organization: 'Kyoto Quantum Institute',
+    bio: 'Invented low-loss optical interconnects reducing rack-to-rack interconnect latency to single-digit picoseconds.',
+    tag: 'Silicon Photonics',
+    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80',
+    featured: true,
+  },
+  {
+    id: '5',
+    name: 'Julian Alvarez',
+    title: 'Distinguished Engineer',
+    organization: 'Prism Graph Systems',
+    bio: 'Designer of distributed relational graph engines executing trillions of dynamic graph operations per second.',
+    tag: 'Database Internals',
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80',
+  },
+  {
+    id: '6',
+    name: 'Dr. Seraphina Vance',
+    title: 'Principal Research Scientist',
+    organization: 'Deep Spatial Systems',
+    bio: 'Pioneered neurosymbolic memory retrieval mechanisms enabling long-horizon robotic manipulation in physical environments.',
+    tag: 'Spatial Intelligence',
+    image: 'https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=600&q=80',
+  },
+];
+
+export const TRACKS: Track[] = [
+  {
+    id: 'track-1',
+    code: 'SYS // 01',
+    title: 'Distributed Infrastructure & Micro-Architectures',
+    subtitle: 'Scaling beyond silicon bottlenecks',
+    description: 'Hardware accelerators, optical routing fabrics, fault-tolerant memory synchronization, and modern kernel optimizations.',
+    topics: ['Zero-Copy RDMA Fabrics', 'CXL Memory Pooling', 'Compiler Synthesis for TPUs', 'Failure Recovery at 100k Nodes'],
+  },
+  {
+    id: 'track-2',
+    code: 'NEU // 02',
+    title: 'Autonomous Reasoning & Neurosymbolic Engines',
+    subtitle: 'From predictive text to verifiable cognitive systems',
+    description: 'Autonomous agentic frameworks, multi-step logical inference, synthetic data curation, and runtime evaluation safety.',
+    topics: ['Latent Planning Mechanisms', 'Constraint Solvers with LLMs', 'Self-Correcting Code Generation', 'Memory Graph Synthesis'],
+  },
+  {
+    id: 'track-3',
+    code: 'SEC // 03',
+    title: 'Cryptographic Integrity & Verifiable Compute',
+    subtitle: 'Trustless execution in untrusted environments',
+    description: 'Zero-knowledge proofs, hardware enclaves (TEE), deterministic sandbox virtualization, and cryptographic provenance.',
+    topics: ['ZK-Rollups for Model Weights', 'Confidential VM Architecture', 'Deterministic Floating-Point Replay', 'Adversarial Jailbreak Mitigations'],
+  },
+  {
+    id: 'track-4',
+    code: 'ENG // 04',
+    title: 'High-Throughput Production Engineering',
+    subtitle: 'Lessons learned operating systems at scale',
+    description: 'Post-mortems, distributed tracing across multi-million QPS services, database schema evolution, and edge execution.',
+    topics: ['Petabyte Realtime Stream Analytics', 'Continuous Model Serving at 5ms', 'Distributed Raft Bottlenecks', 'Autonomous Cluster Healing'],
+  },
+];
+
+export const SCHEDULE: ScheduleDay[] = [
+  {
+    day: 'DAY 01',
+    date: 'Thursday, November 12',
+    theme: 'Foundations & The Physical Substrate',
+    sessions: [
+      {
+        time: '08:30 — 09:30',
+        title: 'Registration & Delegate Accreditation',
+        trackCode: 'GEN',
+        location: 'Grand Atrium',
+      },
+      {
+        time: '09:30 — 10:45',
+        title: 'Opening Keynote: Dissolving the Boundaries Between Memory and Compute',
+        speaker: 'Dr. Aris Thorne',
+        role: 'Head of Compute, Helios',
+        trackCode: 'SYS // 01',
+        location: 'Main Auditorium',
+      },
+      {
+        time: '11:15 — 12:30',
+        title: 'Zero-Copy RDMA Fabrics at Hyperscale: Lessons from 100,000 Nodes',
+        speaker: 'Julian Alvarez',
+        role: 'Distinguished Engineer, Prism',
+        trackCode: 'SYS // 01',
+        location: 'Hall B',
+      },
+      {
+        time: '14:00 — 15:30',
+        title: 'Panel: Next-Generation Silicon Photonics vs Copper Interconnects',
+        speaker: 'Prof. Kaede Tanaka & Guests',
+        role: 'Director, Kyoto Quantum',
+        trackCode: 'SYS // 01',
+        location: 'Main Auditorium',
+      },
+      {
+        time: '16:00 — 17:30',
+        title: 'Closed-Door Syndicate Roundtables (By Track Allocation)',
+        trackCode: 'NET // 01',
+        location: 'Pavilion Suites',
+      },
+    ],
+  },
+  {
+    day: 'DAY 02',
+    date: 'Friday, November 13',
+    theme: 'Autonomous Reasoning & Systems at Scale',
+    sessions: [
+      {
+        time: '09:00 — 10:15',
+        title: 'Keynote: Neurosymbolic Primitives for Autonomous Software Engineering',
+        speaker: 'Mira Chen-Svensson',
+        role: 'VP Foundation Arch, Synthetica',
+        trackCode: 'NEU // 02',
+        location: 'Main Auditorium',
+      },
+      {
+        time: '10:45 — 12:00',
+        title: 'Verifiable Inference: Generating Cryptographic Proofs for LLM Tokens',
+        speaker: 'Marcus Vance, PhD',
+        role: 'Chief Cryptographer, Aether',
+        trackCode: 'SEC // 03',
+        location: 'Hall A',
+      },
+      {
+        time: '13:30 — 15:00',
+        title: 'Architectural Teardown: Serving Trillion-Parameter Reasoning in <10ms',
+        speaker: 'Engineering Leads from Frontier Labs',
+        trackCode: 'ENG // 04',
+        location: 'Hall B',
+      },
+      {
+        time: '15:30 — 17:00',
+        title: 'Live Lab: Implementing Custom Kernel Operators in Triton & CUDA',
+        trackCode: 'LAB // 01',
+        location: 'Innovation Workshop',
+      },
+      {
+        time: '19:00 — 22:00',
+        title: 'AETHEL Gala Dinner & Founder-Investor Reception',
+        trackCode: 'SOC',
+        location: 'Rotunda Conservatory',
+      },
+    ],
+  },
+  {
+    day: 'DAY 03',
+    date: 'Saturday, November 14',
+    theme: 'Frontiers, Embodiment & Future Directions',
+    sessions: [
+      {
+        time: '09:30 — 10:45',
+        title: 'Keynote: Spatial Intelligence and Physics-Informed Neural Simulation',
+        speaker: 'Dr. Seraphina Vance',
+        role: 'Deep Spatial Systems',
+        trackCode: 'NEU // 02',
+        location: 'Main Auditorium',
+      },
+      {
+        time: '11:15 — 12:45',
+        title: 'Open Source Coalitions: Defining Universal Interfaces for Model Context',
+        trackCode: 'ENG // 04',
+        location: 'Hall A',
+      },
+      {
+        time: '14:00 — 15:30',
+        title: 'The Roadmap to 2030: Convergence of Energy, Compute, and Autonomy',
+        trackCode: 'SYS // 01',
+        location: 'Main Auditorium',
+      },
+      {
+        time: '15:45 — 16:30',
+        title: 'Closing Address & 2027 Fellowship Grants Announcement',
+        trackCode: 'GEN',
+        location: 'Main Auditorium',
+      },
+    ],
+  },
+];
+
+export const TICKET_TIERS: TicketTier[] = [
+  {
+    id: 'standard',
+    name: 'Standard Delegate',
+    price: '$1,400',
+    capacity: 'Remaining: 180 seats',
+    description: 'Engineered for practitioners, researchers, and senior engineers seeking pure technical immersion.',
+    features: [
+      'Full 3-day access to all mainstage and parallel technical tracks',
+      'Entry to keynote presentations & research papers',
+      'Daily curated breakfast, artisan coffee, and networking lunch',
+      'Access to evening welcome reception',
+      'Digital proceedings and recorded talk library',
+    ],
+  },
+  {
+    id: 'all-access',
+    name: 'All-Access Pass',
+    price: '$2,400',
+    recommended: true,
+    badge: 'Preferred by Engineering Leaders',
+    capacity: 'Remaining: 95 seats',
+    description: 'Comprehensive access including hands-on engineering masterclasses and private speaker engagements.',
+    features: [
+      'All benefits of the Standard Delegate pass',
+      'Reserved priority seating in the Main Auditorium',
+      'Admission to hands-on architecture deep dives & Triton labs',
+      'Access to private Speaker & Fellow networking lounge',
+      'Exclusive invitation to Friday evening Gala at the Rotunda',
+      '1-year access to private delegate syndicate Slack',
+    ],
+  },
+  {
+    id: 'executive',
+    name: 'Executive Syndicate',
+    price: '$4,800',
+    badge: 'Strictly Capped (150 Total)',
+    capacity: 'Remaining: 14 seats',
+    description: 'Designed for CTOs, VPs of Engineering, and Venture Partners driving institutional strategy.',
+    features: [
+      'All benefits of the All-Access Pass',
+      'Closed-door Chatham House rule roundtables with keynote speakers',
+      'Dedicated concierge for 1:1 introductions & meetings',
+      'Private executive dinner on Thursday evening',
+      'Chauffeured transportation between venue and partner hotels',
+      'Complimentary companion pass to partner cultural events',
+    ],
+  },
+];
+
+export const FAQS: FaqItem[] = [
+  {
+    category: 'Admissions & Selection',
+    question: 'Why is AETHEL an application-reviewed conference?',
+    answer: 'To preserve an exceptionally high density of technical discussions and meaningful networking, each registration is reviewed by our program committee. We ensure balanced representation across researchers, founders, and infrastructure operators.',
+  },
+  {
+    category: 'Admissions & Selection',
+    question: 'How quickly will my registration application be processed?',
+    answer: 'Our committee reviews incoming applications continuously. You will receive an official status notification and ticket confirmation invoice via email within 48 hours of submission.',
+  },
+  {
+    category: 'Logistics',
+    question: 'Are group or enterprise company packages available?',
+    answer: 'Yes. For teams registering 5 or more delegates, we provide unified invoicing, direct tax receipts, and access to dedicated team breakout meeting rooms. Contact delegations@aethelsummit.com.',
+  },
+  {
+    category: 'Travel & Venue',
+    question: 'Where does the conference take place?',
+    answer: 'AETHEL 2026 takes place at The Palace of Fine Arts & Symphony Innovation Hall in San Francisco, California. Preferred delegate rates are secured at nearby boutique hotels.',
+  },
+];
