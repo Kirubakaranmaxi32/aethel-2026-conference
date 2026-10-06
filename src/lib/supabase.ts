@@ -15,16 +15,16 @@ export function getSupabaseCredentials(): {
   isConfigured: boolean;
   missing: 'none' | 'url' | 'anonKey' | 'both';
 } {
-  // 1. Check localStorage first (allows runtime configuration in admin/setup)
-  const localUrl = typeof window !== 'undefined' ? cleanVal(localStorage.getItem(STORAGE_KEY_URL)) : '';
-  const localKey = typeof window !== 'undefined' ? cleanVal(localStorage.getItem(STORAGE_KEY_KEY)) : '';
-
-  // 2. Check Vite env variables
+  // 1. Check Vite env variables primarily
   const envUrl = cleanVal(import.meta.env.VITE_SUPABASE_URL as string | undefined);
   const envKey = cleanVal(import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined);
 
-  const url = localUrl || envUrl || '';
-  const anonKey = localKey || envKey || '';
+  // 2. Fallback to localStorage (allows runtime overrides if env is absent)
+  const localUrl = typeof window !== 'undefined' ? cleanVal(localStorage.getItem(STORAGE_KEY_URL)) : '';
+  const localKey = typeof window !== 'undefined' ? cleanVal(localStorage.getItem(STORAGE_KEY_KEY)) : '';
+
+  const url = envUrl || localUrl || '';
+  const anonKey = envKey || localKey || '';
 
   const isValidUrl = url.startsWith('http://') || url.startsWith('https://');
   const hasAnonKey = Boolean(anonKey && anonKey.length > 10);
